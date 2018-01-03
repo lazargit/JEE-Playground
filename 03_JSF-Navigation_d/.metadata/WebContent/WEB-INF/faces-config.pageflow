@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14854205039790" configfile="/03_JSF-Navigation_d/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Seite1.xhtml" x="312" y="228" id="pf14854241196571" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14854241196572 pf14854242954465" inlinks="pf14854308317576 pf14854308317577" path="/Seite1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Seite2.xhtml" x="684" y="216" id="pf14854241196573" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf14854308317576" inlinks="pf14854241196572" path="/Seite2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Seite3.xhtml" x="602" y="420" id="pf14854241196574" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14854308317577" inlinks="pf14854242954465" path="/Seite3.xhtml"/>
+  <links id="pf14854241196572" target="pf14854241196573" source="pf14854241196571" outcome="s2" redirect="true"/>
+  <links id="pf14854242954465" target="pf14854241196574" source="pf14854241196571" outcome="s3" redirect="true"/>
+  <links id="pf14854308317576" target="pf14854241196571" source="pf14854241196573" outcome="s1"/>
+  <links id="pf14854308317577" target="pf14854241196571" source="pf14854241196574"/>
+</pageflow:Pageflow>

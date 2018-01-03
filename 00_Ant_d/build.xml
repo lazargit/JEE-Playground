@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     23.01.2017 11:20:41                                                        
+
+     Ant1    
+     description
+                   
+     Student                                                                
+     ====================================================================== -->
+<project name="Ant1" default="jar">
+    <description>
+           Erstes Beispiel
+    </description>
+
+    <!-- ================================= 
+          target: jar              
+         ================================= -->
+    <target name="jar" depends="compile" >
+    	<echo>jar...</echo>
+    	<jar destfile="build/jar/Ant1.jar" basedir="build/classes" >
+    		<manifest>
+    		
+    		</manifest>
+    	
+    	</jar>
+        
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+  
+	<target name="compile" depends="clean">
+		<echo>compile...</echo>
+		<mkdir dir="build/classes"/>
+		<javac srcdir="src" destdir="build/classes" includeantruntime="false" />
+	</target>
+	
+	
+	<target name="clean">
+		<echo>clean...</echo>
+		<delete dir="build" />
+	</target>
+
+	<target name="doc">
+		
+		<javadoc destdir="build/doc" sourcepath="src" />
+	
+	</target>
+	
+
+</project>
