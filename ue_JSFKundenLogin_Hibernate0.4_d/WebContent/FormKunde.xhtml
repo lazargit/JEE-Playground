@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+
+<h:messages />
+	<h1>FormKunde</h1>
+	
+	<h:message id="msgout" for="msgout" infoClass="info" errorClass="error"/>
+	<h:form id="form" rendered="#{kundeBean.kundenstatus==1}">
+		<h:panelGrid columns="3">
+
+			<h:outputLabel for="usr" value="Username" />
+			<h:inputText id="usr" value="#{kundeBean.kunde.username}" required="true" > 
+				<f:validateLength maximum="10" minimum="2"/>
+			</h:inputText>
+			<h:message for="usr" />
+
+			<h:outputLabel for="pwd" value="Passwort" />
+			<h:inputSecret id="pwd" value="#{kundeBean.kunde.passwort}" required="true" />
+			<h:message for="pwd"/>
+
+		</h:panelGrid>
+			<h:commandButton value="Weiter"  action="#{kundeBean.isKundeValid}"/>
+
+	</h:form>
+	
+	
+	
+	<h:form id="form2" rendered="#{kundeBean.kundenstatus==2}">
+		<h:panelGrid columns="3">
+		
+			<h:outputLabel for="vorname" value="Vorname" />
+			<h:inputText id="vorname" value="#{kundeBean.kunde.vorname}" required="true" > 
+				<f:validateLength maximum="10" minimum="2"/>
+			</h:inputText>
+			<h:message for="vorname" />
+			
+			<h:outputLabel for="nachname" value="Nachname" />
+			<h:inputText id="nachname" value="#{kundeBean.kunde.nachname}" required="true" > 
+				<f:validateLength maximum="10" minimum="2"/>
+			</h:inputText>
+			<h:message for="nachname" />
+			
+			
+			<h:outputLabel for="email" value="E-Mail" />
+			<h:inputText id="email" value="#{kundeBean.kunde.email}" required="true" > 
+				<f:validateLength maximum="50" minimum="2"/>
+				<f:validateRegex pattern=".+@.+\..+"/>
+			
+			</h:inputText>
+			<h:message for="email" />
+			
+			<h:outputLabel for="usr" value="Username" />
+			<h:inputText id="usr" value="#{kundeBean.kunde.username}" required="true" > 
+				<f:validateLength maximum="10" minimum="2"/>
+			</h:inputText>
+			<h:message for="usr" />
+
+			<h:outputLabel for="pwd" value="Passwort" />
+			<h:inputSecret id="pwd" value="#{kundeBean.kunde.passwort}" required="true" />
+			<h:message for="pwd"/>
+
+		</h:panelGrid>
+			<h:commandButton value="Weiter"  action="ShowKunde"/>
+
+	</h:form>
+
+
+</h:body>
+</html>

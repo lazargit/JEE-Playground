@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:head>
+
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:selectOneMenu value="#{bean.status}"  onchange="submit()">
+			<f:selectItem itemValue="1"  itemLabel="View 1"/>
+			<f:selectItem itemValue="2"  itemLabel="View 2"/>
+		</h:selectOneMenu>
+	
+	</h:form>
+
+	<h:panelGroup rendered="#{bean.status==1}">
+		<h1>View 1</h1>
+		<h:panelGrid columns="2">
+			<h:outputText value="xxxx" />
+			<h:outputText value="xxxx" />
+			<h:outputText value="xxxx" />
+			<h:outputText value="xxxx" />
+		</h:panelGrid>
+
+	</h:panelGroup>
+
+	<h:panelGroup rendered="#{bean.status==2}">
+		<h1>View 2</h1>
+		<h:panelGrid columns="2">
+			<h:outputText value="yyyy" />
+			<h:outputText value="yyyy" />
+			<h:outputText value="yyyy" />
+			<h:outputText value="yyyy" />
+		</h:panelGrid>
+
+	</h:panelGroup>
+
+
+
+
+
+
+
+</h:body>
+</html>

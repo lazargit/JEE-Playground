@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+
+	<h1>FormKunde</h1>
+	
+	<h:outputText value="#{kundeBean.kundenstatus}"/>
+	<h:form>
+		<h:panelGrid>
+
+			<h:outputText value="Username" />
+			<h:inputText value="#{kundeBean.kunde.username}" /> <!-- Temp User -->
+
+
+			<h:outputText value="Passwort" />
+			<h:inputSecret value="#{kundeBean.kunde.passwort}" /><!-- Temp Pwd -->
+
+
+			<h:commandButton value="Weiter"  action="#{kundeBean.isKundeValid}"/>
+		</h:panelGrid>
+
+	</h:form>
+
+
+</h:body>
+</html>

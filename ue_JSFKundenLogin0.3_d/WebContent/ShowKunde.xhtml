@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+
+	<h1>Show Kunde</h1>
+
+	<h:panelGrid border="1" columns="1">
+		<h:outputText value="Sie sind angemeldet"
+			rendered="#{kundeBean.kundenstatus==1}" />
+		<h:outputText value="#{kundeBean.kunde.vorname}" />
+		<h:outputText value="#{kundeBean.kunde.nachname}" />
+		<h:outputText value="#{kundeBean.kunde.email}" />
+		<h:outputText value="#{kundeBean.kunde.username}" />
+
+	</h:panelGrid>
+
+	<h:form>
+
+		<h:commandLink value="Logout" action="#{kundeBean.logout}"
+			rendered="#{kundeBean.kundenstatus==1}" />
+
+		<h:commandButton action="#{kundeBean.save}"
+			rendered="#{kundeBean.kundenstatus==2}" />
+	</h:form>
+
+
+
+</h:body>
+</html>
