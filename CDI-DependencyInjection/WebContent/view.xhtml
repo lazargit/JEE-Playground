@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:body>
+
+
+	<h1>CDI Test</h1>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Vorname" />
+			<h:inputText value="#{viewBean.person.vorname}" />
+			<h:outputLabel value="Nachname" />
+			<h:inputText value="#{viewBean.person.nachname}" />
+			<h:outputLabel value="Ort" />
+			<h:inputText value="#{viewBean.person.adresse.ort}" />
+			<h:commandButton value="Send" />
+		</h:panelGrid>
+
+
+	</h:form>
+	<h:form>
+		<h:commandButton value="Go"
+			actionListener="#{viewBean.serviceExecute}" />
+	</h:form>
+
+	<h:panelGrid columns="1">
+		<h:outputText value="#{viewBean.person.vorname}" />
+		<h:outputText value="#{viewBean.person.nachname}" />
+		<h:outputText value="#{viewBean.person.adresse.ort}" />
+	</h:panelGrid>
+
+
+	<h:messages />
+</h:body>
+</html>
